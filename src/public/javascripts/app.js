@@ -222,11 +222,11 @@ socket.on('esm_start', function (data) {
             data[defaultSpan].responses[data[defaultSpan].responses.length - 2].timestamp;
 
         if (deltaTime < 1) deltaTime = 1000;
-        rpsStat.textContent = ((lastResponseMetric.count / deltaTime) * 1000).toFixed(2);
+        // rpsStat.textContent = ((lastResponseMetric.count / deltaTime) * 1000).toFixed(2);
         //rpsChart.data.datasets[0].data = data[defaultSpan].responses.map(function (point) {
         //    return 0;
-        //});
-        rpsChart.data.labels = data[defaultSpan].responses.map(addTimestamp);
+        // });
+        // rpsChart.data.labels = data[defaultSpan].responses.map(addTimestamp);
     }
 
     charts.forEach(function (chart) {
