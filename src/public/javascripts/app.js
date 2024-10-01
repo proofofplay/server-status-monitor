@@ -306,14 +306,15 @@ socket.on('esm_stats', function (data) {
             responseTimeChart.data.labels.push(responses.timestamp);
         }
 
-        if (responses) {
-            var deltaTime = responses.timestamp - rpsChart.data.labels[rpsChart.data.labels.length - 1];
+        //if (responses) {
+            // var deltaTime = responses.timestamp - rpsChart.data.labels[rpsChart.data.labels.length - 1];
 
-            if (deltaTime < 1) deltaTime = 1000;
-            rpsStat.textContent = ((responses.count / deltaTime) * 1000).toFixed(2);
-            rpsChart.data.datasets[0].data.push((responses.count / deltaTime) * 1000);
+            // if (deltaTime < 1) deltaTime = 1000;
+            let numPlayers = globalThis.globalNumPlayers;
+            rpsStat.textContent = (numPlayers).toFixed(2);
+            rpsChart.data.datasets[0].data.push(numPlayers);
             rpsChart.data.labels.push(responses.timestamp);
-        }
+        //}
 
         if (responses) {
             for (var i = 0; i < 4; i++) {
