@@ -310,12 +310,15 @@ socket.on('esm_stats', function (data) {
             // var deltaTime = responses.timestamp - rpsChart.data.labels[rpsChart.data.labels.length - 1];
 
             // if (deltaTime < 1) deltaTime = 1000;
+            let numPlayers = 0;
             if (data.globalNumPlayers) {
-                let numPlayers = data.globalNumPlayers;
+                numPlayers = data.globalNumPlayers;
+            }
+
                 rpsStat.textContent = (numPlayers);
                 rpsChart.data.datasets[0].data.push(numPlayers);
                 rpsChart.data.labels.push(numPlayers);
-            }
+            
         //}
 
         if (responses) {
