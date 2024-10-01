@@ -223,9 +223,9 @@ socket.on('esm_start', function (data) {
 
         if (deltaTime < 1) deltaTime = 1000;
         rpsStat.textContent = ((lastResponseMetric.count / deltaTime) * 1000).toFixed(2);
-        rpsChart.data.datasets[0].data = data[defaultSpan].responses.map(function (point) {
-            return (point.count / deltaTime) * 1000;
-        });
+        //rpsChart.data.datasets[0].data = data[defaultSpan].responses.map(function (point) {
+        //    return 0;
+        //});
         rpsChart.data.labels = data[defaultSpan].responses.map(addTimestamp);
     }
 
@@ -312,9 +312,9 @@ socket.on('esm_stats', function (data) {
             // if (deltaTime < 1) deltaTime = 1000;
             if (data.globalNumPlayers) {
                 let numPlayers = data.globalNumPlayers;
-                rpsStat.textContent = (numPlayers).toFixed(2);
+                rpsStat.textContent = (numPlayers);
                 rpsChart.data.datasets[0].data.push(numPlayers);
-                rpsChart.data.labels.push(responses.timestamp);
+                rpsChart.data.labels.push(numPlayers);
             }
         //}
 

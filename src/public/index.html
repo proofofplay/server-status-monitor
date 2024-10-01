@@ -13,6 +13,15 @@
       <div class="header">
         <div id="span-controls" class="span-controls"></div>
       </div>
+      <div class="container rps">
+        <div class="stats-column">
+          <h5>Players</h5>
+          <h1 id="rpsStat">-</h1>
+        </div>
+        <div class="chart-container">
+          <canvas id="rpsChart" width="200" height="100"></canvas>
+        </div>
+      </div>
       <div class="container cpu">
         <div class="stats-column">
           <h5>CPU Usage</h5>
@@ -67,15 +76,7 @@
           <canvas id="responseTimeChart" width="200" height="100"></canvas>
         </div>
       </div>
-      <div class="container rps">
-        <div class="stats-column">
-          <h5>Players</h5>
-          <h1 id="rpsStat">-</h1>
-        </div>
-        <div class="chart-container">
-          <canvas id="rpsChart" width="200" height="100"></canvas>
-        </div>
-      </div>
+
       <div class="container statusCodes">
         <div class="stats-column">
           <h5>Status Codes</h5>
