@@ -4,5 +4,6 @@ module.exports = (io, span) => {
     responses: span.responses[span.responses.length - 2],
     interval: span.interval,
     retention: span.retention,
+    globalNumPlayers: globalThis.globalNumPlayers
   });
 };
