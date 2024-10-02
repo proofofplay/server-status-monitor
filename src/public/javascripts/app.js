@@ -14,7 +14,7 @@ Chart.defaults.global.elements.line.borderColor = 'rgba(0,0,0,0.9)';
 Chart.defaults.global.elements.line.borderWidth = 2;
 
 var socket = io(location.protocol + '//' + location.hostname + ':' + (port || location.port), {
-    path: "/secret",
+    path: socketPath,
     transports: ["websocket"]
 });
 var defaultSpan = 0;
