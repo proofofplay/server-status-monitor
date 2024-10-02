@@ -50,6 +50,7 @@ module.exports = (io, span) => {
     if (span.os.length >= span.retention) span.os.shift();
     if (span.responses[0] && span.responses.length > span.retention) span.responses.shift();
 
+    globalThis.perfData = span;
     sendMetrics(io, span);
   });
 };
