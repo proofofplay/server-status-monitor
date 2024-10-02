@@ -16,7 +16,6 @@ const addSocketEvents = (socket, config) => {
 
 module.exports = (server, config) => {
   if (io === null || io === undefined) {
-    console.log("server", server, "config", config)
     if (config.websocket !== null) {
       io = config.websocket;
     } else {
